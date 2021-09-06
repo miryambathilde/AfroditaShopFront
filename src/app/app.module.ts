@@ -12,6 +12,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { DetailProductComponent } from './components/detail-product/detail-product.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CardProductComponent } from './components/card-product/card-product.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RegisterComponent } from './components/register/register.component';
     ProductListComponent,
     DetailProductComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    CardProductComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
