@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from "src/app/services/users.service";
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  myUser: any;
+  isAdmin: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private usersService: UsersService) { }
+
+  async ngOnInit() {
+    this.myUser = await this.usersService.getUser();
+    this.isAdmin = (this.myUser.role !== 'A') ? false : true;
+    //console.log(this.myUser)
   }
-
 }

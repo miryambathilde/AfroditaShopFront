@@ -16,6 +16,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProductsComponent } from './components/profile/products/products.component';
+import { ClientsComponent } from './components/profile/clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     HeaderComponent,
     CardProductComponent,
     ProfileComponent,
+    ProductsComponent,
+    ClientsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],
