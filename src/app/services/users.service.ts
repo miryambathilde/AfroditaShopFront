@@ -22,4 +22,16 @@ export class UsersService {
     }
     return this.httpClient.post<any>(this.baseUrl + 'register', pForm, httpOptions).toPromise();
   }
+
+  //metodo POST para enviar los datos //
+
+  login(pFormValue: any): Promise<any>{
+    //cabeceras - headers //
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    }
+    return this.httpClient.post<any>(this.baseUrl + 'login', pFormValue, httpOptions).toPromise();
+  }
 }
