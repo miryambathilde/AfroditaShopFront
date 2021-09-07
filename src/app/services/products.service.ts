@@ -15,4 +15,8 @@ export class ProductsService {
   getAll(): Promise<Product[]> {
     return this.httpClient.get<Product[]>(this.baseUrl).toPromise();
   }
+
+  getById(pId: number): Promise<Product> {
+    return this.httpClient.get<Product>(this.baseUrl + '/product/' + pId).toPromise();
+  }
 }

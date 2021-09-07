@@ -1,4 +1,4 @@
-<div class="card p-3 mb-2 shadow">
+<div class="card p-3 mb-2 shadow w-100">
   <div class="d-flex justify-content-between">
     <div class="d-flex flex-row align-items-center">
       <div class="c-details">
@@ -27,7 +27,7 @@
               red: product?.available === 0
             }">{{ product?.available === 1 ? "En Stock" : "No disponible" }}</span></span>
       </div>
-      <button class="mt-2 btn btn-sm btn-danger">Ver producto</button>
+      <button [routerLink]="['/product' + product?.id]" routerLinkActive="router-link-active" class="mt-2 btn btn-sm btn-danger">Ver producto</button>
     </div>
   </div>
 </div>
