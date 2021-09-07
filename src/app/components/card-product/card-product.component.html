@@ -27,7 +27,7 @@
               red: product?.available === 0
             }">{{ product?.available === 1 ? "En Stock" : "No disponible" }}</span></span>
       </div>
-      <button [routerLink]="['/product' + product?.id]" routerLinkActive="router-link-active" class="mt-2 btn btn-sm btn-danger">Ver producto</button>
+      <button [routerLink]="['/product', product?.id]" routerLinkActive="router-link-active" class="mt-2 btn btn-sm btn-danger">Ver producto</button>
     </div>
   </div>
 </div>

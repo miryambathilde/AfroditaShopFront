@@ -16,7 +16,8 @@ export class DetailProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(async params => {
-      this.myProduct = await this.productsService.getById(Number(params.idproduct))
+      const id = Number(params.idproduct);
+      this.myProduct = await this.productsService.getById(id)
       console.log(params.idproduct);
     })
   }
