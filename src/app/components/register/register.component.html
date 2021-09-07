@@ -1,8 +1,51 @@
-<!-- <form [formGroup]="registerForm" (ngSubmit)=onSubmit() class="mt-4">
-  <div>
-    <label for="name">Nombre</label>
-    <input class="form-control" type="text" id="name" formControlName="name">
-    <p class="text-danger" *ngIf="registerForm.get" ></p>
-  </div>
-</form>
- -->
+<div class="container mt-3">
+  <h2>Registro</h2>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="my-2">
+      <label for="username">Introduce tu nombre de usuario</label>
+      <input type="text" class="form-control" formControlName="username" />
+      <p class="text-danger" *ngIf="checkControl('username', 'minlength')">
+        El nombre debe tener una longitud mínima de 4 carácteres
+      </p>
+    </div>
+    <div class="my-2">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" formControlName="email" />
+      <p class="text-danger" *ngIf="checkControl('email', 'required')">
+        Email es un campo obligatorio
+      </p>
+      <p class="text-danger" *ngIf="checkControl('email', 'pattern')">
+        El email debe tener un formato válido
+      </p>
+    </div>
+    <div class="my-2">
+      <label for="password">Instroduce tu contraseña</label>
+      <input type="password" class="form-control" formControlName="password" />
+      <p class="text-danger" *ngIf="checkControl('password', 'required')">
+        La contraseña es un campo obligatorio
+      </p>
+
+      <p class="text-danger" *ngIf="checkControl('password', 'minlength')">
+        La contraseña debe tener minimo 8 carácteres
+      </p>
+    </div>
+    <div>
+      <label for="password">Repita la contraseña</label>
+      <input
+        class="form-control"
+        type="password"
+        id="password"
+        formControlName="repite_password"
+      />
+      <p class="text-danger" *ngIf="formulario.hasError('validadorPassword')">
+        Las contraseñas no coinciden
+      </p>
+    </div>
+    <input
+      type="submit"
+      value="Enviar"
+      class="btn btn-danger mt-3"
+      [disabled]="!formulario.valid"
+    />
+  </form>
+</div>
