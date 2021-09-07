@@ -1,0 +1,48 @@
+<header>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-danger border-3 shadow p-3"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['home']">
+        <img
+          class="img-fluid logo"
+          src="../../../assets/images/logo.png"
+          alt="Afrodita Shop"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/products-list']" routerLinkActive="active">Productos</a>
+          </li>
+          <li class="nav-item" *ngIf="!logado">
+            <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Login</a>
+          </li>
+          <li class="nav-item" *ngIf="!logado">
+            <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Registro</a>
+          </li>
+          <li class="nav-item" *ngIf="logado">
+            <a class="nav-link" [routerLink]="['/profile']" routerLinkActive="active">Panel</a>
+          </li>
+          <li class="nav-item" *ngIf="logado">
+            <a class="nav-link logout" routerLinkActive="active" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
