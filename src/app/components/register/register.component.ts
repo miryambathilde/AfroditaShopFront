@@ -53,6 +53,7 @@ export class RegisterComponent implements OnInit {
 
   async onSubmit() {
     const result = await this.usersService.register(this.formulario.value);
+    console.log(result);
     if(result.affectedRows){
       this.router.navigate(['/login'])
     }

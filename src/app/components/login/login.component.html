@@ -1,17 +1,33 @@
-<!-- <div>
-  <h2>Login Usuario</h2>
-  <form #login="ngForm" (ngSubmit)="recogerDatosForm(login); login.reset()">
-    <div>
-      <label for="username">User</label><br>
-      <input type="text" ngModel name="username" id="username" ngModel>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first pt-5 pb-3">
+      <img
+        src="https://cdn3.iconfinder.com/data/icons/ui-super-basic-flat/32/login-512.png"
+        id="icon"
+        alt="User Icon"
+      />
     </div>
 
-    <div>
-      <label for="pass">Password</label><br>
-      <input type="password" NgModel name="password" id="password" ngModel>
-    </div>
-		<br>
-    <input type="submit" class="btn btn-danger mt-3" value="Login">
-  </form>
+    <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
+      <input
+        type="text"
+        id="login"
+        class="fadeIn second"
+        name="email"
+        ngModel
+        placeholder="Usuario"
+      />
+
+      <input
+        type="password"
+        id="password"
+        class="fadeIn third"
+        name="password"
+        ngModel
+        placeholder="Contraseña"
+      />
+
+      <input type="submit" class="fadeIn fourth" value="Log In" />
+    </form>
+  </div>
 </div>
- -->
