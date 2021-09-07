@@ -17,6 +17,6 @@ export class ProductsService {
   }
 
   getById(pId: number): Promise<Product> {
-    return this.httpClient.get<Product>(this.baseUrl + '/product/' + pId).toPromise();
+    return this.httpClient.get<Product>(this.baseUrl + pId).toPromise();
   }
 }
